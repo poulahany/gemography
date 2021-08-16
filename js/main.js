@@ -45,7 +45,14 @@ request.onload = function () {
         statusHTML += '<tr>'
         statusHTML += '<td>' + status.languages + '</td>'
         statusHTML += '<td>' + status.total + '</td>'
-        statusHTML += '<td>' + status.repositories + '</td>'
+        statusHTML += '<td>'
+        //create a dropdown list and store all repos links in it 
+        statusHTML += '<select>'
+        $.each(status.repositories, function (j, repo) {
+            statusHTML += '<option value = "lol" >' + repo + '</option>'
+        })
+        statusHTML += '</select >'
+        statusHTML += '</td>'
         statusHTML += '</tr>'
     })
     //finally append the statusHTML to the HTML table
